@@ -2,10 +2,10 @@ package baseball;
 
 import java.util.List;
 
-public class User {
+public class UserNumber {
     private final List<Integer> number;
 
-    public User(List<Integer> number) {
+    public UserNumber(List<Integer> number) {
         this.number = number;
     }
 
