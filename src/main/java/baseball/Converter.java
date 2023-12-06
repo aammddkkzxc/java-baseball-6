@@ -1,15 +1,17 @@
 package baseball;
 
+import static baseball.UserNumber.USER_NUMBER_RE_REQUEST_MESSAGE;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Converter {
-    private static final String USER_NUMBER_RE_REQUEST_MESSAGE = "사용자 번호를 다시 입력해 주십시오.";
-
-    public static List<Integer> convertUserNumber(List<Character> separatedUserNumber) {
+    public static List<Integer> convertUserNumber(String userNumber) {
+        List<Character> separatedUserNumber = separateUserNumber(userNumber);
         List<Integer> convertedUserNumber = new ArrayList<>();
+
         try {
-            for(char number : separatedUserNumber) {
+            for (char number : separatedUserNumber) {
                 convertedUserNumber.add(Integer.parseInt(String.valueOf(number)));
             }
             return convertedUserNumber;
@@ -18,9 +20,9 @@ public class Converter {
         }
     }
 
-    public static List<Character> separateUserNumber(String userNumber) {
+    private static List<Character> separateUserNumber(String userNumber) {
         List<Character> separatedUserNumber = new ArrayList<>();
-        for(int i = 0; i<userNumber.length(); i++) {
+        for (int i = 0; i < userNumber.length(); i++) {
             separatedUserNumber.add(userNumber.charAt(i));
         }
 
