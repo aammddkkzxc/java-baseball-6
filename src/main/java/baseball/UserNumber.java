@@ -25,7 +25,7 @@ public class UserNumber {
     }
 
     private void validateNumberLength(List<Integer> number) {
-        if (number.size() !=3) {
+        if (number.size() != 3) {
             throw new IllegalArgumentException(USER_NUMBER_RE_REQUEST_MESSAGE);
         }
     }
@@ -33,12 +33,24 @@ public class UserNumber {
     public int countStrike(List<Integer> computerNumber) {
         int strike = 0;
 
-        for(int i = 0; i < number.size(); i++) {
+        for (int i = 0; i < number.size(); i++) {
             if (Objects.equals(number.get(i), computerNumber.get(i))) {
                 strike++;
             }
         }
 
         return strike;
+    }
+
+    public int countBall(List<Integer> computerNumber) {
+        int ball = 0;
+
+        for (int i = 0; i < number.size(); i++) {
+            if (computerNumber.contains(number.get(i)) && !Objects.equals(number.get(i), computerNumber.get(i))) {
+                ball++;
+            }
+        }
+
+        return ball;
     }
 }
