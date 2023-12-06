@@ -1,38 +1,19 @@
-Application 클래스 : 프로그램 실행 클래스
-- main : 프로그램 실행
+# 숫자 야구 게임
 
-GameNumber 클래스 : 게임에 필요한 수를 다루는 클래스
-- generateComputerNumber : 컴퓨터 랜덤 번호 생성한다
-- convertUserNumber : 입력 받은 유저 넘버을 자리수 별로 나누고 변환해준다
+## 기능목록
 
-GamePlayer 클래스 : 게임의 전체 과정 로직을 다루는 클래스
-- playGame - 게임 전체가 플레이되는 메소드
-- playRound - 유저가 번호를 제시하고 점수를 확인받는 한 라운드가 실행되는 메소드
-
-GameScore 클래스 : 유저와 컴퓨터의 값으로 strike 와 ball 을 계산하는 클래스
-- calculateStrike : strike 계산
-- calculateBall : ball 계산
-
-GameStatus 클래스 : 게임의 상태를 다루는 클래스
-- checkGameSuccess : 유저가 3스트라이크에 성공하였을 시 성공상태로 만들어준다 
-- checkGameStatusDecision : 유저가 새로운 게임을 할지 종료할지 판단한 결과에 따라 게임 상태를 만들어준다
-- isGameSuccessStatus : 현재 게임 상태가 성공 상태인지 판별해준다.
-- isEndStatus : 현재 게임 상태가 종료 상태인지 판별해준다.
-
-Input 클래스 : console 로 입력을 받는 클래스
-- inputData : 입력을 호출하는 메서드
-- inputUserNumber : 유저 번호 입력
-- inputGameStatusDecision : 유저가 새로운 게임을 할지 종료할지 입력
-
-Output 클래스 : 결과를 알리는 클래스
-- startGame : 게임 시작을 알린다, 게임 진행 상태값을 반환한다.
-- printRoundScore : 한 라운드에 점수를 알린다
-- printGameSuccessMessage : 게임을 성공했음을 알린다
-
-Validator클래스 : input 값 유효성검사 클래스
-- validateInputData : 숫자로 변환 가능한 값인지 검사, 예외 발생
-- validateUserNumber : 유저 넘버 검사, 예외 발생
-- isUserNumberOutOfRange : 유저 넘버 범위 판단
-- isUserNumberOverlap : 유저 넘버 중복 판단
-- validateGameStatusDecision : 유저가 새게임 할지 종료할지 입력한 값 검사, 예외 발생
-- isGameStatusDecisionMismatch : 유저가 새게임 할지 종료할지 입력한 값 에 일치하는 값인지 판단
+- [ ] 서로 다른 세자리 수(컴퓨터 번호)를 생성한다.
+- [ ] 서로 다른 세자리 수(유저 번호)를 입력 받는다.
+    - [ ] 중복된 숫자가 존재 할 경우 예외가 발생한다.
+    - [ ] 세자리가 아닐 경우 예외가 발생한다.
+    - [ ] 예외가 발생할 경우 값을 재입력 받는다.
+- [ ] 컴퓨터 번호와 유저 번호를 비교한다.
+    - [ ] 자리수는 다르지만 동일한 번호 하나당 1볼로 한다.
+    - [ ] 자리수도 같고 동일한 번호 하나당 1스트라이크로 한다.
+    - [ ] 비교 결과를 출력한다.
+    - [ ] 3스트라이크가 될 때 까지 유저 번호를 재입력 받는다.
+        - [ ] 3스트라이크일 경우  재시작/종료를 구분하는 1과 2중 하나의 수를 입력받는다.
+            - [ ] 1과 2가 아닌 숫자가 입력 될 경우 예외가 발생한다.
+            - [ ] 예외가 발생할 경우 값을 재입력 받는다.
+            - [ ] 1일 경우 컴퓨터 번호를 게임을 처음부터 다시 시작한다.
+            - [ ] 2일 경우 프로그램을 종료한다.
