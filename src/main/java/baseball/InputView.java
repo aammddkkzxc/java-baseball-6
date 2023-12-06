@@ -24,7 +24,7 @@ public class InputView {
     }
 
     private static List<Integer> readUserNumber() {
-        System.out.println(USER_NUMBER_REQUEST_MESSAGE);
+        System.out.print(USER_NUMBER_REQUEST_MESSAGE);
         String userNumber = Console.readLine();
 
         return Converter.convertUserNumber(userNumber);
