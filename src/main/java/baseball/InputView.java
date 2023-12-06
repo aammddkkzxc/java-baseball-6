@@ -15,12 +15,11 @@ public class InputView {
 
     public static UserNumber inputUserNumber() {
         try {
-            UserNumber userNumber = new UserNumber(readUserNumber());
+            return new UserNumber(readUserNumber());
         } catch (IllegalArgumentException e) {
             System.out.println(USER_NUMBER_RE_REQUEST_MESSAGE);
+            return inputUserNumber();
         }
-
-        return inputUserNumber();
     }
 
     private static List<Integer> readUserNumber() {

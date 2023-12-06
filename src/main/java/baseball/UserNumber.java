@@ -11,18 +11,21 @@ public class UserNumber {
 
     public UserNumber(List<Integer> number) {
         validateDuplication(number);
+        validateNumberLength(number);
 
         this.number = number;
     }
 
     private void validateDuplication(List<Integer> number) {
         Set<Integer> duplicationChecker = new HashSet<>(number);
-        if(duplicationChecker.size() != number.size()) {
+        if (duplicationChecker.size() != number.size()) {
             throw new IllegalArgumentException(USER_NUMBER_RE_REQUEST_MESSAGE);
         }
     }
 
-    private void validateNumberLength() {
-
+    private void validateNumberLength(List<Integer> number) {
+        if (number.size() !=3) {
+            throw new IllegalArgumentException(USER_NUMBER_RE_REQUEST_MESSAGE);
+        }
     }
 }
