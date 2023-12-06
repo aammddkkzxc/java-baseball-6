@@ -2,6 +2,7 @@ package baseball;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class UserNumber {
@@ -27,5 +28,17 @@ public class UserNumber {
         if (number.size() !=3) {
             throw new IllegalArgumentException(USER_NUMBER_RE_REQUEST_MESSAGE);
         }
+    }
+
+    public int countStrike(List<Integer> computerNumber) {
+        int strike = 0;
+
+        for(int i = 0; i < number.size(); i++) {
+            if (Objects.equals(number.get(i), computerNumber.get(i))) {
+                strike++;
+            }
+        }
+
+        return strike;
     }
 }

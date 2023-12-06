@@ -3,6 +3,6 @@ package baseball;
 public class Application {
     public static void main(String[] args) {
         InputView.printStartMessage();
-        InputView.inputUserNumber();
+        UserNumber userNumber = InputView.inputUserNumber();
     }
 }
