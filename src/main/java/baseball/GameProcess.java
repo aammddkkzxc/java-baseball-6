@@ -5,9 +5,14 @@ import java.util.List;
 public class GameProcess {
     public static void playGame() {
         InputView.printStartMessage();
-        do{
+
+        while (true) {
             playRound();
-        }while (){
+            GameStatus gameStatus = InputView.inputGameStatusNumber();
+
+            if (gameStatus.isEndState()) {
+                break;
+            }
         }
     }
 
@@ -17,8 +22,10 @@ public class GameProcess {
             UserNumber userNumber = InputView.inputUserNumber();
             int strike = userNumber.countStrike(computerNumber);
             int ball = userNumber.countBall(computerNumber);
+            GameStatus gameStatus = new GameStatus();
+            gameStatus.decideGamsStatus(strike);
 
-            if (strike == 3) {
+            if (gameStatus.isSuccessState()) {
                 break;
             }
         }
