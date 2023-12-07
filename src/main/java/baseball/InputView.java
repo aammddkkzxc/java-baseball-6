@@ -34,10 +34,10 @@ public class InputView {
         return 0;
     }
 
-    private static String readGameStatusNumber() {
+    private static int readGameStatusNumber() {
         System.out.println(GAME_STATUS_NUMBER_REQUEST_MESSAGE);
-        String GameStatusNumber = Console.readLine();
+        String gameStatusNumber = Console.readLine();
 
-        return GameStatusNumber;
+        return Converter.convertGameStatusNumber(gameStatusNumber);
     }
 }

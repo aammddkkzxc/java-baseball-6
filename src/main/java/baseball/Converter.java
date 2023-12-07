@@ -1,5 +1,6 @@
 package baseball;
 
+import static baseball.GameStatus.STATUS_NUMBER_RE_REQUEST_MESSAGE;
 import static baseball.UserNumber.USER_NUMBER_RE_REQUEST_MESSAGE;
 
 import java.util.ArrayList;
@@ -27,5 +28,13 @@ public class Converter {
         }
 
         return separatedUserNumber;
+    }
+
+    public static int convertGameStatusNumber(String gameStatusNumber) {
+        try {
+            return Integer.parseInt(gameStatusNumber);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(STATUS_NUMBER_RE_REQUEST_MESSAGE);
+        }
     }
 }
