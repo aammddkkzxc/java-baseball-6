@@ -18,7 +18,7 @@ public class InputView {
         try {
             return new UserNumber(readUserNumber());
         } catch (IllegalArgumentException e) {
-            System.out.println(USER_NUMBER_RE_REQUEST_MESSAGE);
+            System.out.println(e.getMessage());
             return inputUserNumber();
         }
     }
@@ -30,8 +30,13 @@ public class InputView {
         return Converter.convertUserNumber(userNumber);
     }
 
-    public static int inputStatusNumber() {
-        return 0;
+    public static GameStatus inputGameStatusNumber() {
+        try {
+            return new GameStatus(readGameStatusNumber());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return inputGameStatusNumber();
+        }
     }
 
     private static int readGameStatusNumber() {
