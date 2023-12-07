@@ -7,7 +7,6 @@ public class GameProcess {
         InputView.printStartMessage();
         do{
             playRound();
-            GameStatus gameStatus = new GameStatus();
         }while (){
         }
     }
