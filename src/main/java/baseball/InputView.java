@@ -1,7 +1,5 @@
 package baseball;
 
-import static baseball.UserNumber.USER_NUMBER_RE_REQUEST_MESSAGE;
-
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
 

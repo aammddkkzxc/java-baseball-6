@@ -20,8 +20,11 @@ public class GameProcess {
         while(true) {
             List<Integer> computerNumber = ComputerNumber.makeComputerNumber();
             UserNumber userNumber = InputView.inputUserNumber();
+
             int strike = userNumber.countStrike(computerNumber);
             int ball = userNumber.countBall(computerNumber);
+            OutputView.printHintMessage(ball,strike);
+
             GameStatus gameStatus = new GameStatus();
             gameStatus.decideGamsStatus(strike);
 
