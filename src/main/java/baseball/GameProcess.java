@@ -7,7 +7,8 @@ public class GameProcess {
         InputView.printStartMessage();
 
         while (true) {
-            playRound();
+            List<Integer> computerNumber = ComputerNumber.makeComputerNumber();
+            playRound(computerNumber);
             GameStatus gameStatus = InputView.inputGameStatusNumber();
 
             if (gameStatus.isEndState()) {
@@ -16,11 +17,9 @@ public class GameProcess {
         }
     }
 
-    private static void playRound() {
+    private static void playRound(List<Integer> computerNumber) {
         while(true) {
-            List<Integer> computerNumber = ComputerNumber.makeComputerNumber();
             UserNumber userNumber = InputView.inputUserNumber();
-
             int strike = userNumber.countStrike(computerNumber);
             int ball = userNumber.countBall(computerNumber);
             OutputView.printHintMessage(ball,strike);
@@ -29,6 +28,7 @@ public class GameProcess {
             gameStatus.decideGamsStatus(strike);
 
             if (gameStatus.isSuccessState()) {
+                OutputView.printSuccessMessage();
                 break;
             }
         }

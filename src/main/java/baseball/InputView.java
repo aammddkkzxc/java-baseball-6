@@ -14,33 +14,33 @@ public class InputView {
 
     public static UserNumber inputUserNumber() {
         try {
-            return new UserNumber(readUserNumber());
+            return readUserNumber();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return inputUserNumber();
         }
     }
 
-    private static List<Integer> readUserNumber() {
+    private static UserNumber readUserNumber() {
         System.out.print(USER_NUMBER_REQUEST_MESSAGE);
         String userNumber = Console.readLine();
 
-        return Converter.convertUserNumber(userNumber);
+        return new UserNumber(Converter.convertUserNumber(userNumber));
     }
 
     public static GameStatus inputGameStatusNumber() {
         try {
-            return new GameStatus(readGameStatusNumber());
+            return readGameStatusNumber();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return inputGameStatusNumber();
         }
     }
 
-    private static int readGameStatusNumber() {
+    private static GameStatus readGameStatusNumber() {
         System.out.println(GAME_STATUS_NUMBER_REQUEST_MESSAGE);
         String gameStatusNumber = Console.readLine();
 
-        return Converter.convertGameStatusNumber(gameStatusNumber);
+        return new GameStatus(Converter.convertGameStatusNumber(gameStatusNumber));
     }
 }
