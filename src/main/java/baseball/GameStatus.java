@@ -10,4 +10,8 @@ public class GameStatus {
     private void validateNumber() {
 
     }
+
+    public boolean isEndState() {
+        return statusNumber == 2;
+    }
 }
